@@ -34,7 +34,7 @@
                 <li><a href=""><i class="fa fa-th"></i><span>@lang('site.prices')</span></a></li>
         </ul>
 {{-- 
-        <ul class="sidebar-menu" data-widget="tree">
+        <!-- <ul class="sidebar-menu" data-widget="tree">
             <li><a href="{{ route('dashboard.welcome') }}"><i class="fa fa-th"></i><span>@lang('site.dashboard')</span></a></li>
 
             @if (auth()->user()->hasPermission('read_categories'))
@@ -85,7 +85,7 @@
             {{--</li>--}}
             {{--</ul>--}}
             {{--</li>--}}
-        {{-- </ul> --}}
+        {{-- </ul> --}} -->
 
     </section>
 

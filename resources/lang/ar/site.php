@@ -78,6 +78,12 @@ return [
     'reports'           => 'التقارير' ,
     'prices'            => 'الاسعار' ,
     'received_bond'     => 'سند قبض' ,
+    'name'              => 'الاسم',
+    'amount'            => 'المبلغ',
+    'mobile'            => 'رقم الموبايل',
+    'cash'              => 'كاش',
+    'cheque'            => 'شيك',   
+
 
 
 
