@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\ReceivedBond;
 
-class BondsController extends Controller
+class ReceivedBondController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +21,6 @@ class BondsController extends Controller
 
         return view("dashboard.bonds.index" , compact("recv_bond"));
 
-        
     }
 
     /**
@@ -32,8 +31,6 @@ class BondsController extends Controller
     public function create()
     {
         //
-
-        return view('dashboard.bonds.create');
     }
 
     /**
@@ -44,7 +41,20 @@ class BondsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       $attributes = request()->validate([
+ 
+        'name' => ['required'],
+        'amount' => ['required'],
+        'mobile_num' => ['required'],
+        'type' => ['required'],
+
+        ]);
+
+        ReceivedBond::create($attributes);
+
+        return redirect('/dashboard/bonds/index');
+
     }
 
     /**

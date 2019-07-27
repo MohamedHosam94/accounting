@@ -71,6 +71,7 @@ return [
 
 
     'bonds'             => 'السندات' ,
+    'bond'             => 'السند' ,
     'invoices'          => 'الفواتير' ,
     'customer_account'  => 'حساب العملاء' ,
     'suppliers_account' => 'حساب الموردين' ,
@@ -78,6 +79,7 @@ return [
     'reports'           => 'التقارير' ,
     'prices'            => 'الاسعار' ,
     'received_bond'     => 'سند قبض' ,
+    'given_bond'        => 'سند صرف' ,
     'name'              => 'الاسم',
     'amount'            => 'المبلغ',
     'mobile'            => 'رقم الموبايل',
