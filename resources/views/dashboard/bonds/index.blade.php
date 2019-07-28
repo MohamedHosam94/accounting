@@ -30,7 +30,7 @@
           
           <a style="margin:1%" class="btn btn-primary" href="{{ route('dashboard.bonds.create') }}" role="button"><i class="fa fa-plus"></i> @lang('site.add') @lang('site.received_bond')</a>
 
-          <a style="margin:1%" class="btn btn-success" href="" role="button"><i class="fa fa-plus"></i> @lang('site.add') @lang('site.given_bond')</a>
+          <a style="margin:1%" class="btn btn-success" href="{{ route('dashboard.g-bond.create') }}" role="button"><i class="fa fa-plus"></i> @lang('site.add') @lang('site.given_bond')</a>
         
          </div>
 

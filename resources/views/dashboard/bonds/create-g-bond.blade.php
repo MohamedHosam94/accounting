@@ -33,7 +33,7 @@
                 @csrf
 
             <div class="form-row col-md-12" style="margin-bottom:20px;" >
-             <h3>@lang('site.received_bond')</h3>
+             <h3>@lang('site.given_bond')</h3>
             </div>
 
             <div class="form-row">
@@ -86,20 +86,7 @@
            </form>
         
           </div>
-            <!-- <div class="box box-primary"> -->
-
-                <!-- <div class="box-header">
-                    <h3 class="box-title"> Here is head @lang('')</h3>
-                </div> end of box header -->
-<!-- 
-                <div class="box-body">
-
-                                 Here is Body       
-
-
-                </div>end of box body --> 
-
-            <!-- </div> -->
+     
 
         </section><!-- end of content -->
 
@@ -108,20 +95,6 @@
 
 @endsection
 
-
-   <!-- {{-- <div class="form-check col-md-3">
-                <input class="form-check-input" type="radio" name=""  value="">
-                <label class="form-check-label" for="cheque">
-                @lang('site.cheque')
-                </label>
-                </div>
-
-                <div class="form-check col-md-3">
-                <input class="form-check-input" type="radio" name="" value="">
-                <label class="form-check-label" for="cash">
-                @lang('site.cash')
-                </label>
-                </div> --}} -->
 
 
 

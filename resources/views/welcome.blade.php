@@ -76,8 +76,16 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
+
+                   
+                      <a href="{{ route('dashboard.index') }}">Dashboard</a>
+                    
                 </div>
             @endif
+
+                
+                     
+                 
 
             <div class="content">
                 <div class="title m-b-md">
