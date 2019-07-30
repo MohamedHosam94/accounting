@@ -28,7 +28,7 @@
 
           <div>
 
-            <form action="/dashboard/bonds" method="POST">
+            <form action="/dashboard/givenbonds" method="POST">
 
                 @csrf
 

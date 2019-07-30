@@ -38,7 +38,7 @@
           <div>
             
            
-             <h3>كل السندات</h3>
+             <h3>سندات القبض</h3>
 
 
             <table class="table" style="margin-top:3%">

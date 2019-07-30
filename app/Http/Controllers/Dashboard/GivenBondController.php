@@ -39,6 +39,20 @@ class GivenBondController extends Controller
     public function store(Request $request)
     {
         //
+
+        $g_bondattributes = request()->validate([
+ 
+            'name' => ['required'],
+            'amount' => ['required'],
+            'mobile_num' => ['required'],
+            'type' => ['required'],
+    
+            ]);
+    
+            GivenBond::create($g_bondattributes);
+    
+            return redirect('/dashboard/bonds/index');
+
     }
 
     /**

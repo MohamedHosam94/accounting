@@ -16,6 +16,8 @@
         // Given bond routes
       Route::get('/givenbonds/create' , 'GivenBondController@create')->name('g-bond.create');
 
+      Route::post('/givenbonds' , 'GivenBondController@store');
+
 
    }); 
       

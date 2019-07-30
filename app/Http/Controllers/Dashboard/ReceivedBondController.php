@@ -42,7 +42,7 @@ class ReceivedBondController extends Controller
     public function store(Request $request)
     {
         
-       $attributes = request()->validate([
+       $r_bondattributes = request()->validate([
  
         'name' => ['required'],
         'amount' => ['required'],
@@ -51,7 +51,7 @@ class ReceivedBondController extends Controller
 
         ]);
 
-        ReceivedBond::create($attributes);
+        ReceivedBond::create($r_bondattributes);
 
         return redirect('/dashboard/bonds/index');
 
