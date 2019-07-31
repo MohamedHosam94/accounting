@@ -19,5 +19,21 @@
       Route::post('/givenbonds' , 'GivenBondController@store');
 
 
-   }); 
+      // Invoices Routes 
+
+      Route::get('/invoices/index' , 'InvoicesController@index')->name('invoices.index');
+
+
+      Route::get('/invoices/create-purchase' , 'PurchasesInvoicesController@create')
+      ->name('invoices.create-purchase');
+
+      Route::post('/invoices/purchases' , 'PurchasesInvoicesController@store');
+      
+
+      Route::get('/invoices/create-sale' , 'SalesInvoicesController@create')
+      ->name('invoices.create-sale');
+
+      Route::post('/invoices/sales' , 'SalesInvoicesController@store');
+   
+    }); 
       

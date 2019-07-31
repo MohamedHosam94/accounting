@@ -21,7 +21,7 @@
 
                 <li><a href="{{ route('dashboard.bonds.index') }}"><i class="fa fa-th"></i><span>@lang('site.bonds')</span></a></li>
 
-                <li><a href=""><i class="fa fa-th"></i><span>@lang('site.invoices')</span></a></li>
+                <li><a href="{{ route('dashboard.invoices.index') }}"><i class="fa fa-th"></i><span>@lang('site.invoices')</span></a></li>
 
                 <li><a href=""><i class="fa fa-th"></i><span>@lang('site.customer_account')</span></a></li>
 
