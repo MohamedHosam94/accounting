@@ -46,7 +46,10 @@ class ReceivedBondController extends Controller
  
         'name' => ['required'],
         'amount' => ['required'],
+        'amount_in_letters' => ['required'],
         'mobile_num' => ['required'],
+        'payment_against' => ['required'],
+        'bank' => ['required'],
         'type' => ['required'],
 
         ]);

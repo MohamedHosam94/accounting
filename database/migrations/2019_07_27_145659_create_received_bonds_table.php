@@ -14,11 +14,15 @@ class CreateReceivedBondsTable extends Migration
     public function up()
     {
         Schema::create('received_bonds', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             
             $table->string('name');
             $table->string('amount');
+            $table->string('amount_in_letters');
             $table->string('mobile_num');
+            $table->string('payment_against');
+            $table->string('bank');
             $table->string('type');
 
             $table->timestamps();

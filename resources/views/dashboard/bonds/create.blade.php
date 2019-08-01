@@ -39,7 +39,7 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
-                <label for="name">@lang('site.name')</label>
+                <label for="name">استلمنا من السيد</label>
                 <input type="text" class="form-control" name="name" required>
                 </div>
 
@@ -48,15 +48,35 @@
                 <input type="text" class="form-control" name="amount" required>
                 </div>
 
+                <div class="form-group col-md-12">
+                <label for="amount-in-letters">المبلغ بالحروف</label>
+                <input type="text" class="form-control" name="amount_letters" required>
+                </div>
+
 
                 <div class="form-group col-md-12">
                 <label for="mobile">@lang('site.mobile')</label>
                 <input type="text" class="form-control" name="mobile_num" required>
                 </div>
-             
-              {{-- <div class="form-row"> --}}
-     
-                {{-- </div> --}}
+
+                <div class="form-group col-md-6">
+                <label for="payment_against">ذلك مقابل</label>
+                <input type="text" class="form-control" name="payment_against" required>
+                </div>
+            
+              
+                <div class="form-group col-md-6">
+                    <label class="" for="bank">مسحوب علي بنك </label>
+                    <select class="form-control" id="">
+                      <option selected>اختار</option>
+                      <option value="Ahly_bank">بنك الاهلي</option>
+                      <option value="Rajhi_bank">بنك الراجحي</option>
+                      <option value="Riyadh_bank">بنك الرياض</option>
+                    </select>
+                </div>
+
+
+
              </div>
      
              
@@ -77,12 +97,21 @@
                         </label>
                       </div>
 
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="deposit" >
+                        <label class="form-check-label" for="gridRadios3">
+                           ايداع
+                        </label>
+                      </div>
+
                 </fieldset>
 
                </div> 
-
+                
+               <div class="col-md-12">
                <button type="submit" class="btn btn-success">@lang('site.add') @lang('site.bond')</button>
-    
+               </div>
+
            </form>
         
           </div>
