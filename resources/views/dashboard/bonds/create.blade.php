@@ -48,11 +48,15 @@
                 <input type="text" class="form-control" name="amount" required>
                 </div>
 
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                 <label for="amount-in-letters">المبلغ بالحروف</label>
-                <input type="text" class="form-control" name="amount_letters" required>
+                <input type="text" class="form-control" name="amount_in_letters" required>
                 </div>
 
+                <div class="form-group col-md-6">
+                <label for="date">التاريخ</label>
+                <input type="date" class="form-control" name="date" required>
+                </div>
 
                 <div class="form-group col-md-12">
                 <label for="mobile">@lang('site.mobile')</label>
@@ -67,7 +71,7 @@
               
                 <div class="form-group col-md-6">
                     <label class="" for="bank">مسحوب علي بنك </label>
-                    <select class="form-control" id="">
+                      <select class="form-control" name="bank">
                       <option selected>اختار</option>
                       <option value="Ahly_bank">بنك الاهلي</option>
                       <option value="Rajhi_bank">بنك الراجحي</option>

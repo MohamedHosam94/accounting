@@ -40,12 +40,19 @@ class GivenBondController extends Controller
     {
         //
 
+       // dd($request);
+
         $g_bondattributes = request()->validate([
  
-            'name' => ['required'],
-            'amount' => ['required'],
-            'mobile_num' => ['required'],
-            'type' => ['required'],
+           
+            'name'              => ['required'],
+            'amount'            => ['required'],
+            'amount_in_letters' => ['required'],
+            'mobile_num'        => ['required'],
+            'payment_against'   => ['required'],
+            'bank'              => ['required'],
+            'type'              => ['required'],
+            'date'              => ['required'],
     
             ]);
     

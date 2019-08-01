@@ -41,16 +41,19 @@ class ReceivedBondController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request);
         
        $r_bondattributes = request()->validate([
  
-        'name' => ['required'],
-        'amount' => ['required'],
+        'name'              => ['required'],
+        'amount'            => ['required'],
         'amount_in_letters' => ['required'],
-        'mobile_num' => ['required'],
-        'payment_against' => ['required'],
-        'bank' => ['required'],
-        'type' => ['required'],
+        'mobile_num'        => ['required'],
+        'payment_against'   => ['required'],
+        'bank'              => ['required'],
+        'type'              => ['required'],
+        'date'              => ['required'],
 
         ]);
 
