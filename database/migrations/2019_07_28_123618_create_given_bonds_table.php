@@ -19,6 +19,7 @@ class CreateGivenBondsTable extends Migration
             $table->string('name');
             $table->string('amount');
             $table->string('amount_in_letters');
+            $table->date('date');
             $table->string('mobile_num');
             $table->string('payment_against');
             $table->string('bank');
