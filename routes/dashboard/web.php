@@ -34,6 +34,19 @@
       ->name('invoices.create-sale');
 
       Route::post('/invoices/sales' , 'SalesInvoicesController@store');
-   
+
+
+      // Customers_account Routes 
+
+
+      Route::get('/customers/index' , 'CustomersBalanceController@index')
+      ->name('customers_balance.index');
+
+      Route::get('/customers/create' , 'CustomersBalanceController@create')
+      ->name('customers_balance.create');
+     
+
+
+
     }); 
       
