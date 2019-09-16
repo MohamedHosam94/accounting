@@ -6,9 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\PurchasesInvoice;
+use App;
+use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 
 class PurchasesInvoicesController extends Controller
 {
+  
+  
+     public function __construct() 
+     {
+
+      $this->middleware('auth');
+
+     }
+  
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +60,13 @@ class PurchasesInvoicesController extends Controller
     
             ]);
     
-            PurchasesInvoice::create($p_invoice);
+           
+            auth()->user()->purchasesInvoice()->create($p_invoice);
+
+            $pdf = PDF::loadView('dashboard.invoices.print-purchase' , $p_invoice);
+            return $pdf->stream();
+           
+            // PurchasesInvoice::create($p_invoice);
     
             return redirect('/dashboard/invoices/index');
     }
@@ -71,10 +88,24 @@ class PurchasesInvoicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(PurchasesInvoice $purchasesInv)
     {
-        //
+      
+        return view('dashboard.invoices.purchaseEdit' , compact("purchasesInv"));
     }
+
+    //  search the invoices to edit 
+     public function search(Request $request) 
+     { 
+      
+        $query = $request->input('query');
+
+        $purchasesInv = PurchasesInvoice::where('user_id' , auth()->id())
+         ->where('id' , 'like' , "%$query%")
+         ->paginate(5);
+
+         return view('dashboard.invoices.purchaseShow' , compact('purchasesInv'));
+     } 
 
     /**
      * Update the specified resource in storage.
@@ -83,9 +114,23 @@ class PurchasesInvoicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PurchasesInvoice $purchasesInv , Request $request)
     {
-        //
+        
+        $purchasesInv->update(
+            request()->validate([
+                'name'         => ['required'],
+                'amount'       => ['required'],
+                'mobile_num'   => ['required'],                
+                'products'     => ['required'],
+                'quantity'     => ['required'],
+                'type'         => ['required'],
+            ])
+       );
+
+    //    return (request()->all());
+
+       return redirect('/dashboard/invoices/purchasesInvoice/show');
     }
 
     /**

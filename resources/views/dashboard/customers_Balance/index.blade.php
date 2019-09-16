@@ -42,24 +42,22 @@
                  </tr>
                </thead>
 
-               {{-- @foreach ($recv_bond as $r_bond) --}}
-               {{-- <tbody>
+                @foreach ($customers as $customer) 
+                <tbody>
                  <tr>
-                   <th scope="row"> {{ $r_bond->id }} </th>
-                   <td> {{ $r_bond->name }} </td>
-                   <td> {{ $r_bond->mobile_num }} </td>
-                   <td> {{ $r_bond->amount }} </td>
-                   <td> {{ $r_bond->type }} </td>
-                 </tr>
+                   <th scope="row"> {{ $customer->account_num }} </th>
+                   <td> {{ $customer->name }} </td>
+                   <td> {{ $customer->mobile_num }} </td>
+                   <td> {{ $customer->address }} </td>
+                   <td> {{ $customer->email }} </td>
+                 </tr> 
 
-               </tbody> --}}
-               {{-- @endforeach --}}
+               </tbody> 
+               @endforeach 
              </table>
 
-         
-              
 
-
+              {{ $customers->links() }}
          </div>
 
 

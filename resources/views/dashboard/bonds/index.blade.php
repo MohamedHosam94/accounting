@@ -38,7 +38,7 @@
           <div>
             
            
-             <h3>سندات القبض</h3>
+             <h3>كشف حساب السندات</h3>
 
 
             <table class="table" style="margin-top:3%">

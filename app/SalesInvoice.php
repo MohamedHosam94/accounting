@@ -9,4 +9,13 @@ class SalesInvoice extends Model
     //
 
     protected $guarded = [];
+
+
+    
+    public function user()
+    {
+        return $this->belongsto(User::class);
+
+    }
+
 }

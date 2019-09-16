@@ -22,7 +22,7 @@
 
           <div>
 
-            <form action="/" method="POST">
+            <form action="/dashboard/customers" method="POST">
 
                 @csrf
 
@@ -45,20 +45,26 @@
 
 
                 <div class="form-group col-md-6">
-                <label for="mobile">المنطقة</label>
+                <label for="address">المنطقة</label>
                 <input type="text" class="form-control" name="address" required>
                 </div>
              
                 <div class="form-group col-md-6">
-                <label for="mobile">البريد</label>
+                <label for="email">البريد</label>
                 <input type="text" class="form-control" name="email" required>
+                </div>
+
+                <div class="form-group col-md-6">
+                <label for="account_num"> رقم حساب العميل </label>
+                <input type="text" class="form-control" name="account_num" required>
                 </div>
 
 
              </div>
-
-
-               <button style="margin:10px;" type="submit" class="btn btn-success">اضف حساب العميل</button>
+                          
+            <div class="col-md-12"> 
+               <button style="margin:8px;" type="submit" class="btn btn-success">اضف حساب العميل</button>
+            </div>
     
            </form>
         

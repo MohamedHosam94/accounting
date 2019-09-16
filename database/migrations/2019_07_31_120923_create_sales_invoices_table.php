@@ -16,6 +16,8 @@ class CreateSalesInvoicesTable extends Migration
         Schema::create('sales_invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->unsignedBigInteger('user_id');
+
             $table->string('name');
             $table->string('amount');
             $table->string('mobile_num');
@@ -24,6 +26,8 @@ class CreateSalesInvoicesTable extends Migration
             $table->string('type');
             
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

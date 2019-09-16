@@ -6,10 +6,23 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\SalesInvoice;
+use App;
+use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 
 
 class SalesInvoicesController extends Controller
 {
+   
+   
+     public function __construct() 
+     {
+
+      $this->middleware('auth');
+
+     }
+   
+   
+   
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +65,13 @@ class SalesInvoicesController extends Controller
     
             ]);
     
-            SalesInvoice::create($s_invoice);
+           
+            auth()->user()->salesInvoice()->create($s_invoice);
+
+            $pdf = PDF::loadView('dashboard.invoices.print-sale' , $s_invoice);
+            return $pdf->stream();
+           
+            // SalesInvoice::create($s_invoice);
     
             return redirect('/dashboard/invoices/index');
     }

@@ -174,7 +174,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // this is for pdf print
+        // Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+        // NahidulHasan\Html2pdf\Html2pdfServiceProvider::class,
+        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
     ],
 
     /*
@@ -225,7 +229,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        // this is for pdf print
+        // 'PDF' => Barryvdh\DomPDF\Facade::class,
+        // 'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        // 'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        // 'Pdf'  => NahidulHasan\Html2pdf\Facades\Pdf::class,
+        'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class,
     ],
 
 ];

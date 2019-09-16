@@ -49,9 +49,10 @@
             }
 
             .links > a {
-                color: #636b6f;
+                /* #636b6f */
+                color: #ffffff;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 17px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -61,10 +62,27 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            /* this is for the image  */
+            .background {
+                background-image: url("/assets/img1.jpg");
+                height: 100vh;
+                width: 100%;
+                background-size: 100% 100%;
+            }
+
+            .top-left {
+                position: absolute;
+                left: 30px;
+                top: 1px; 
+                font-size: 25px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                margin: 10px;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref full-height background">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -78,21 +96,24 @@
                     @endauth
 
                    
-                      <a href="{{ route('dashboard.index') }}">Dashboard</a>
+                      {{-- <a href="{{ route('dashboard.index') }}">Dashboard</a> --}}
                     
                 </div>
             @endif
 
                 
-                     
+            <div class="top-left" style="color:#ffffff;">
+                Accounting System
+            </div>
+
                  
 
             <div class="content">
-                <div class="title m-b-md">
+              
+                {{-- <div class="top-left title m-b-md" style="color:#ffffff;">
                     Accounting System
-                </div>
-
-             
+                </div> --}}
+    
             </div>
         </div>
     </body>

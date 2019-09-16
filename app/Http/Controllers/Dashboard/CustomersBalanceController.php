@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\CustomersBalance;
+use App;
+use Meneses\LaravelMpdf\Facades\LaravelMpdf as PDF;
 
 class CustomersBalanceController extends Controller
 {
@@ -14,9 +16,20 @@ class CustomersBalanceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct() 
+    {
+ 
+    
+    $this->middleware('auth');
+
+   } 
+   
     public function index()
     {
-        return view('dashboard.customers_balance.index');
+        $customers = auth()->user()->customersBalance()->paginate(5);
+        
+        return view('dashboard.customers_balance.index' , compact('customers'));
     }
 
     /**
@@ -39,7 +52,25 @@ class CustomersBalanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $customers = request()->validate([
+ 
+            'name'         => ['required'],
+            'email'        => ['required'],
+            'address'      => ['required'],
+            'mobile_num'   => ['required'],
+            'account_num'  => ['required'],
+            
+            ]);
+    
+           
+           auth()->user()->customersBalance()->create($customers);
+           
+           $pdf = PDF::loadView('dashboard.customers_Balance.print' , $customers);
+           return $pdf->stream();
+            // ReceivedBond::create($r_bondattributes);
+    
+            return redirect('/dashboard/customers/index');
     }
 
     /**

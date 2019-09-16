@@ -15,7 +15,18 @@ class CreateCustomersBalancesTable extends Migration
     {
         Schema::create('customers_balances', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('user_id');
+            
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->text('address');
+            $table->string('mobile_num');
+            $table->string('account_num');
+
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

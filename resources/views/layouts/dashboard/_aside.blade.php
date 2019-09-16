@@ -17,21 +17,33 @@
         <ul class="sidebar-menu" data-widget="tree">
 
 
+        @if (Gate::allows('user'))  
+
                 <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-th"></i><span>@lang('site.dashboard')</span></a></li>
 
-                <li><a href="{{ route('dashboard.bonds.index') }}"><i class="fa fa-th"></i><span>@lang('site.bonds')</span></a></li>
+                <li><a href="{{ route('dashboard.bonds.index2') }}"><i class="fa fa-th"></i><span>@lang('site.bonds')</span></a></li>
 
                 <li><a href="{{ route('dashboard.invoices.index') }}"><i class="fa fa-th"></i><span>@lang('site.invoices')</span></a></li>
 
                 <li><a href="{{ route('dashboard.customers_balance.index') }}"><i class="fa fa-th"></i><span>@lang('site.customer_account')</span></a></li>
 
-                <li><a href=""><i class="fa fa-th"></i><span>@lang('site.suppliers_account')</span></a></li>
+                <li><a href="{{ route('dashboard.suppliers_balance.index') }}"><i class="fa fa-th"></i><span>@lang('site.suppliers_account')</span></a></li>
 
-                <li><a href=""><i class="fa fa-th"></i><span>@lang('site.bank_accounts')</span></a></li>
+                <li><a href="{{ route('dashboard.bank.index') }}"><i class="fa fa-th"></i><span>البنك</span></a></li>
 
-                <li><a href=""><i class="fa fa-th"></i><span>@lang('site.reports')</span></a></li>
+                <li><a href="{{ route('dashboard.box.index') }}"><i class="fa fa-th"></i><span>الصندوق</span></a></li>
+
+
+                <li><a href="{{ route('dashboard.report.index') }}"><i class="fa fa-th"></i><span>@lang('site.reports')</span></a></li>
 
                 <li><a href=""><i class="fa fa-th"></i><span>@lang('site.prices')</span></a></li>
+
+         @elseif (Gate::allows('admin-user')) 
+
+
+                @include('layouts.dashboard._asideAdmin')
+
+        @endif
         </ul>
 {{-- 
         <!-- <ul class="sidebar-menu" data-widget="tree">

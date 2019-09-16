@@ -15,6 +15,8 @@ class CreateGivenBondsTable extends Migration
     {
         Schema::create('given_bonds', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('user_id');
             
             $table->string('name');
             $table->string('amount');
@@ -26,6 +28,8 @@ class CreateGivenBondsTable extends Migration
             $table->string('type');
 
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

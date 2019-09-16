@@ -79,6 +79,13 @@
                         </label>
                       </div>
 
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="deposit" >
+                        <label class="form-check-label" for="gridRadios3">
+                           ايداع
+                        </label>
+                      </div>
+
                 </fieldset>
 
                </div> 

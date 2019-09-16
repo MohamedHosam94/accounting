@@ -16,6 +16,8 @@ class CreateReceivedBondsTable extends Migration
         Schema::create('received_bonds', function (Blueprint $table) {
 
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('user_id');
             
             $table->string('name');
             $table->string('amount');
@@ -27,6 +29,8 @@ class CreateReceivedBondsTable extends Migration
             $table->string('type');
 
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

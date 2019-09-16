@@ -15,6 +15,8 @@ class CreatePurchasesInvoicesTable extends Migration
     {
         Schema::create('purchases_invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
+ 
+            $table->unsignedBigInteger('user_id');
 
             $table->string('name');
             $table->string('amount');
@@ -24,6 +26,9 @@ class CreatePurchasesInvoicesTable extends Migration
             $table->string('type');
 
             $table->timestamps();
+
+            $table->index('user_id');
+            
         });
     }
 

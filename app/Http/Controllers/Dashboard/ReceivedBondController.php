@@ -8,6 +8,17 @@ use App\ReceivedBond;
 
 class ReceivedBondController extends Controller
 {
+   
+   
+     public function __construct() 
+     {
+
+      $this->middleware('auth');
+
+     }
+   
+   
+   
     /**
      * Display a listing of the resource.
      *
@@ -57,7 +68,10 @@ class ReceivedBondController extends Controller
 
         ]);
 
-        ReceivedBond::create($r_bondattributes);
+       
+       auth()->user()->receivedBond()->create($r_bondattributes);
+       
+        // ReceivedBond::create($r_bondattributes);
 
         return redirect('/dashboard/bonds/index');
 

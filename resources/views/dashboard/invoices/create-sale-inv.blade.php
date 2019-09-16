@@ -10,7 +10,6 @@
             <h1></h1>
 
           
-
             <ol class="breadcrumb">
               
                     <a><i class="fa fa-dashboard"></i> </a>
@@ -18,7 +17,8 @@
             </ol>
         </section>
 
-      <section class="content">
+ 
+        <section class="content">
 
           <div>
 
@@ -76,6 +76,13 @@
                         <input class="form-check-input" type="radio" name="type" id="gridRadios2" value="cheque" >
                         <label class="form-check-label" for="gridRadios2">
                             @lang('site.cheque')
+                        </label>
+                      </div>
+
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="type" id="gridRadios3" value="deposit" >
+                        <label class="form-check-label" for="gridRadios3">
+                           ايداع
                         </label>
                       </div>
 

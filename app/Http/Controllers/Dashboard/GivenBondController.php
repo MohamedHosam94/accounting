@@ -9,6 +9,15 @@ use App\GivenBond;
 
 class GivenBondController extends Controller
 {
+
+    
+     public function __construct() 
+     {
+
+      $this->middleware('auth');
+
+     }
+
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +65,10 @@ class GivenBondController extends Controller
     
             ]);
     
-            GivenBond::create($g_bondattributes);
+            auth()->user()->givenBond()->create($g_bondattributes);
+
+           
+            // GivenBond::create($g_bondattributes);
     
             return redirect('/dashboard/bonds/index');
 

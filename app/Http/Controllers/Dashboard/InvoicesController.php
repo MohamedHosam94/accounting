@@ -7,6 +7,16 @@ use App\Http\Controllers\Controller;
 
 class InvoicesController extends Controller
 {
+    
+    
+     public function __construct() 
+     {
+
+      $this->middleware('auth');
+
+     }
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +25,23 @@ class InvoicesController extends Controller
     public function index()
     {
         return view('dashboard.invoices.index');
+    }
+
+
+
+    // show list of purchases invoices to edit
+
+    public function purchaseShow()
+    {
+        return view('dashboard.invoices.purchaseShow');
+    }
+
+
+    // show list of sales invoices to edit 
+
+    public function salesShow()
+    {
+        return view('dashboard.invoices.salesShow');
     }
 
     /**
